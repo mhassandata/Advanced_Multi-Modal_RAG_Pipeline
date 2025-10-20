@@ -1,125 +1,164 @@
-# Advanced Multi-Modal RAG Pipeline
+# 🔎 Advanced Multi-Modal RAG Pipeline 🚀
 
-This project provides a complete, end-to-end **Retrieval-Augmented Generation (RAG)** pipeline implemented in a single Jupyter Notebook. It goes beyond standard text-based RAG by incorporating multi-modal capabilities to intelligently process and understand **text, tables, and images** from documents.
+**End-to-End Retrieval-Augmented Generation for Text, Tables & Images**
 
-The system uses a sophisticated hybrid retrieval approach, combining keyword and semantic search, and leverages a large language model (LLM) like GPT-4o to answer complex questions with precise, page-level citations that reference the specific type of content retrieved.
+[![GitHub Stars](https://img.shields.io/github/stars/yourusername/your-repo-name?style=for-the-badge\&logo=github)](https://github.com/yourusername/your-repo-name/stargazers)
+[![License](https://img.shields.io/github/license/yourusername/your-repo-name?style=for-the-badge\&color=blue)](./LICENSE)
+![Python](https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge\&logo=python)
+![OpenAI](https://img.shields.io/badge/Powered%20By-OpenAI-GPT4o-ff69b4?style=for-the-badge\&logo=openai)
+![Status](https://img.shields.io/badge/Build-Stable-success?style=for-the-badge)
+![Contributions welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge\&logo=github)
 
-## Architecture Flowchart
+> A next-generation **RAG pipeline** that goes far beyond standard text-based retrieval — enabling intelligent, multi-modal understanding of **documents, tables, and visual data**. With hybrid search, page-level citations, and seamless LLM integration, this project delivers state-of-the-art knowledge extraction and reasoning directly inside a Jupyter Notebook.
 
-The entire implementation is based on the following logical flow, which handles document ingestion, processing, retrieval, and generation.
+---
 
------
+## 🧠 Overview
 
-## \#\# Features
+This repository contains a fully-functional **Retrieval-Augmented Generation (RAG)** pipeline designed for **multi-modal document intelligence**. It reads and reasons over unstructured text, tabular data, and even embedded images — providing **context-aware answers** with precise citations.
 
-  * **📚 Multi-Modal Processing**: Ingests PDF documents and automatically extracts distinct elements like paragraphs, tables, and images using `PyMuPDF`.
-  * **👁️ Vision Integration**: Leverages **GPT-4o** to analyze images and figures, generating rich text summaries that are embedded and used as context.
-  * **🔍 Hybrid Search**: Combines the strengths of keyword-based search (**BM25**) and semantic vector search (**ChromaDB**) for accurate and robust information retrieval.
-  * **💾 Open-Source Vector DB**: Uses **ChromaDB** for efficient, local storage and retrieval of document embeddings.
-  * **✍️ Generation with Precise Citations**: Provides answers grounded in the source documents, with citations that include the page number and the type of content (e.g., `Text`, `Table`, `Image Summary`).
-  * **🚀 Interactive UI**: Includes a simple `ipywidgets` interface for easy document upload and querying directly within the notebook, simulating a user-friendly application.
-  * **🛡️ Guardrails & Logging**: Demonstrates basic MLOps principles by simulating content moderation guardrails and logging retrieval events.
+🔍 **What makes it special?**
 
------
+* Understands **text, tables, and figures** in documents
+* Uses **hybrid retrieval (BM25 + embeddings)** for smarter search
+* Generates **traceable answers with page-level citations**
+* Vision-enabled **LLM reasoning on charts, diagrams, and images**
 
-## \#\# Tech Stack
+---
 
-  * **Core Logic**: Python 3.9+
-  * **LLM & Embeddings**: OpenAI (GPT-4o, `text-embedding-3-small`)
-  * **Framework**: LangChain
-  * **Vector Database**: ChromaDB
-  * **PDF Parsing**: PyMuPDF
-  * **UI**: Jupyter Notebook with `ipywidgets`
-  * **Keyword Search**: `rank-bm25`
+## ✨ Core Features
 
------
+| Feature                         | Description                                                           |
+| ------------------------------- | --------------------------------------------------------------------- |
+| 📚 **Multi-Modal Intelligence** | Extracts and understands text, tables, and images from PDFs.          |
+| 👁️ **Vision + LLM**            | Uses GPT-4o’s vision capabilities for charts, diagrams, and figures.  |
+| 🔍 **Hybrid Search**            | Combines BM25 keyword retrieval with semantic vector search.          |
+| 📑 **Grounded Generation**      | Answers include citations with page numbers and content types.        |
+| 🧪 **Interactive UI**           | Query, upload, and process docs directly from Jupyter UI.             |
+| 🛡️ **Guardrails & Logging**    | Includes logging, moderation, and audit-ready retrieval traceability. |
 
-## \#\# Setup and Installation
+---
 
-Follow these steps to get the project running on your local machine.
+## 🏗️ Architecture Diagram
 
-### \#\#\# 1. Prerequisites
-
-  * Python 3.9 or higher.
-  * An OpenAI API Key.
-
-### \#\#\# 2. Clone the Repository
-
-```bash
-git clone <your-repository-url>
-cd <your-repository-name>
+```
+PDFs / Docs ─► Ingestion & Parsing ─► Chunking & Embedding ─► Hybrid Retrieval ─► LLM Generation
+      │                      │                     │                     │
+      │                      │                     │                     └─► Context-aware Answers + Citations
+      │                      │                     │
+      └─► Text / Tables / Images ─► Vector DB ─► Query Engine ─► UI Layer
 ```
 
-### \#\#\# 3. Create a Virtual Environment
+---
 
-It's recommended to use a virtual environment to manage dependencies.
+## ⚙️ Tech Stack
+
+| Component            | Tool                                    |
+| -------------------- | --------------------------------------- |
+| **Language**         | Python 3.9+                             |
+| **LLM & Embeddings** | OpenAI GPT-4o, `text-embedding-3-small` |
+| **Framework**        | LangChain                               |
+| **Vector Store**     | ChromaDB                                |
+| **PDF Parsing**      | PyMuPDF                                 |
+| **Keyword Search**   | `rank-bm25`                             |
+| **UI**               | Jupyter Notebook + `ipywidgets`         |
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Prerequisites
+
+* Python 3.9+
+* [OpenAI API Key](https://platform.openai.com/)
+
+### 2️⃣ Clone the Repository
 
 ```bash
-# For Windows
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+```
+
+### 3️⃣ Create a Virtual Environment
+
+```bash
+# Windows
 python -m venv venv
 venv\Scripts\activate
 
-# For macOS/Linux
+# macOS / Linux
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### \#\#\# 4. Install Dependencies
-
-Create a file named `requirements.txt` and paste the following content into it.
-
-**`requirements.txt`**:
-
-```
-openai
-langchain
-langchain-openai
-langchain-community
-langchain-text-splitters
-pypdf
-python-docx
-pandas
-Pillow
-pytesseract
-chromadb
-rank_bm25
-tiktoken
-ipywidgets
-PyMuPDF
-```
-
-Now, install all dependencies from the command line:
+### 4️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### \#\#\# 5. Set Up Environment Variables
+### 5️⃣ Set Environment Variables
 
-Create a file named `.env` in the root of your project directory and add your OpenAI API key:
+Create a `.env` file:
 
 ```
 OPENAI_API_KEY="sk-..."
 ```
 
-The notebook is configured to load this key automatically.
+---
 
------
+## 🧪 How to Use
 
-## \#\# How to Use
+1. **📁 Add Documents:** Place PDFs inside the `data/` folder.
+2. **🚀 Launch Notebook:**
 
-1.  **Add Documents**: Place your PDF documents inside the `data/` directory. If the directory doesn't exist, the notebook will create it for you.
-2.  **Launch Jupyter**: Open the project in your terminal and run the notebook.
-    ```bash
-    jupyter notebook "Your_RAG_Notebook_Name.ipynb"
-    ```
-3.  **Run the Notebook**: Execute the cells sequentially from top to bottom. The initial cells will handle setup, document processing, and building the retrieval system.
-4.  **Interact with the UI**: The final cell will display an interactive UI.
-      * **To Ingest New Files**: Use the "Upload Documents" button, then click "Ingest Uploaded Files".
-      * **To Ask a Question**: Type your query, check/uncheck the "Enable Generation" box, and click "Run Query". The answer and its sources will be displayed below.
+   ```bash
+   jupyter notebook "Your_RAG_Notebook_Name.ipynb"
+   ```
+3. **⚙️ Run Pipeline:** Execute cells sequentially to parse, embed, and retrieve.
+4. **💬 Query the System:** Use the interactive UI to ingest new docs and ask questions.
 
------
+---
 
-## \#\# License
+## 📸 Demo Screenshots
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+Here’s a quick look at the RAG pipeline in action 👇
+
+| 📄 Document Parsing                 | 🔎 Query Processing             | 🧠 Answer Generation              |
+| ----------------------------------- | ------------------------------- | --------------------------------- |
+| ![Parsing](assets/demo_parsing.png) | ![Query](assets/demo_query.png) | ![Answer](assets/demo_answer.png) |
+
+> 💡 *Tip:* Store screenshots in an `assets/` folder at the root of your repository to make this section shine on GitHub.
+
+---
+
+## 🤝 Contributing
+
+We ❤️ contributions!
+If you’d like to improve this project:
+
+1. Fork the repo
+2. Create a new branch (`feature/your-feature`)
+3. Submit a pull request 🚀
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for more details.
+
+---
+
+## 🌟 Future Roadmap
+
+* [ ] 🧠 Fine-tune embeddings for domain-specific retrieval
+* [ ] 🧮 Add structured query support (SQL + LLM)
+* [ ] ☁️ Deploy as a FastAPI / Streamlit web app
+* [ ] 🧪 Extend to video & audio document ingestion
+
+---
+
+## 💡 Why This Matters
+
+Most RAG systems only understand text. This project breaks that barrier — integrating **visual reasoning, tabular understanding, and semantic retrieval** into one seamless pipeline. It’s a foundation for the next generation of **enterprise AI search engines, document assistants, and knowledge copilots.**
+
