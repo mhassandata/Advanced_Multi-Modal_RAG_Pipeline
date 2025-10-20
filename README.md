@@ -5,7 +5,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/mhassandata/your-repo-name?style=for-the-badge\&logo=github)](https://github.com/mhassandata/Advanced_Multi-Modal_RAG_Pipeline/stargazers)
 [![License](https://img.shields.io/github/license/mhassandata/Advanced_Multi-Modal_RAG_Pipeline?style=for-the-badge\&color=blue)](./LICENSE)
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge\&logo=python)
-![OpenAI](https://img.shields.io/badge/Powered%20By-OpenAI-GPT4o-ff69b4?style=for-the-badge\&logo=openai)
+![OpenAI](![OpenAI](https://a11ybadges.com/badge?logo=openai))
 ![Status](https://img.shields.io/badge/Build-Stable-success?style=for-the-badge)
 ![Contributions welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge\&logo=github)
 
