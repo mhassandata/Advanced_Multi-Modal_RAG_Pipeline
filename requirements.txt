@@ -1,0 +1,14 @@
+openai
+langchain
+langchain-openai
+langchain-community
+langchain-text-splitters
+python-docx
+pandas
+Pillow
+pytesseract
+chromadb
+rank_bm25
+tiktoken
+PyMuPDF
+python-dotenv
