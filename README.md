@@ -1,7 +1,3 @@
-Of course. Here is a comprehensive `README.md` file for your GitHub project. You can copy and paste this content into a new file named `README.md` in your project's root directory.
-
------
-
 # Advanced Multi-Modal RAG Pipeline
 
 This project provides a complete, end-to-end **Retrieval-Augmented Generation (RAG)** pipeline implemented in a single Jupyter Notebook. It goes beyond standard text-based RAG by incorporating multi-modal capabilities to intelligently process and understand **text, tables, and images** from documents.
