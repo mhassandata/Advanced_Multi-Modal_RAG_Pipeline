@@ -60,3 +60,6 @@
 <p align="center">
   <img src="assets/hero_banner.png" alt="RAG Demo" width="85%" />
 </p>
+
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/traversaal-ai/agents-in-action)
